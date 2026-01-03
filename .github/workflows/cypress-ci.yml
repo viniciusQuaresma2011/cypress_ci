@@ -32,5 +32,12 @@ jobs:
 
       - name: Executar testes Cypress (Headless)
         uses: cypress-io/github-action@v6
+        
+      - name: Upload de evidências (screenshots e vídeos)
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
-            command: npx cypress run
+          name: evidencias-cypress
+          path: |
+            cypress/screenshots
+            cypress/videos
