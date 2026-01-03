@@ -1,0 +1,8 @@
+-Comando para rodar o teste especifico sem abrir o navegador, *rodando internamente:
+
+npx cypress run --spec "cypress/e2e/login.cy.js"
+
+
+-comando para rodar o teste pelo navegador
+
+npm run cypress:open
