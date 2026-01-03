@@ -27,9 +27,10 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-
       - name: Corrigir permissão do Cypress
         run: chmod +x node_modules/.bin/cypress
 
       - name: Executar testes Cypress (Headless)
-        uses: cypress-io/github-action@v6 
+        uses: cypress-io/github-action@v6
+        with:
+            command: npx cypress run
