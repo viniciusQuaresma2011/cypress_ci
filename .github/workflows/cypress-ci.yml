@@ -1,4 +1,4 @@
-name: Cypress CI - Testes Automatizados
+name: Cypress CI - Testes Automaticos
 
 on:
   push:
@@ -27,5 +27,9 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+
+      - name: Corrigir permissão do Cypress
+        run: chmod +x node_modules/.bin/cypress
+
       - name: Executar testes Cypress (Headless)
-        run: npx cypress run
+        uses: cypress-io/github-action@v6 
